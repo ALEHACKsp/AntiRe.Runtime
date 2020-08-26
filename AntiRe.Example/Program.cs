@@ -30,7 +30,7 @@ namespace AntiRe.Example
             Alert.AutoCloseTime = 2;
             Alert.NotepadPath = "readme.txt";
             //Prevent assembly being dumped from memory
-            AntiDump.Parse(typeof(MethodBase /* or this.GetType() */));
+            AntiDump.Parse(typeof(Program /* or this.GetType() */));
             //Prevent application start under sandbox tools
             AntiSandBox.SelfDelete = SelfDelete;
             AntiSandBox.ShowAlert = ShowAlert;
