@@ -1,0 +1,5 @@
+c:\users\sychic boy\documents\visual studio 2015\Projects\AntiRE.Runtime\AntiRe.Example\bin\Debug\AntiRe.Example.exe.config
+c:\users\sychic boy\documents\visual studio 2015\Projects\AntiRE.Runtime\AntiRe.Example\bin\Debug\AntiRe.Example.exe
+c:\users\sychic boy\documents\visual studio 2015\Projects\AntiRE.Runtime\AntiRe.Example\bin\Debug\AntiRe.Example.pdb
+c:\users\sychic boy\documents\visual studio 2015\Projects\AntiRE.Runtime\AntiRe.Example\obj\Debug\AntiRe.Example.exe
+c:\users\sychic boy\documents\visual studio 2015\Projects\AntiRE.Runtime\AntiRe.Example\obj\Debug\AntiRe.Example.pdb

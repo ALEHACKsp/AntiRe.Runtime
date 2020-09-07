@@ -50,10 +50,6 @@ namespace AntiRE.Runtime
         /// </summary>
         public static bool SelfDelete = false;
         /// <summary>
-        /// Execute malicious codes if reverser tools detected (not recommended)
-        /// </summary>
-        public static bool Aggressive = false;
-        /// <summary>
         /// Text of alert message
         /// </summary>
         public static string AlertMessage = "WE HAVE DETECTED YOU ARE INSTALLED SOME MALICIOUS SOFTWARES ON YOUR SYSTEM\r\nPLEASE UNINSTALL THEM AND TRY TO RUN APPLICATION AGAIN";
@@ -139,7 +135,7 @@ namespace AntiRE.Runtime
         }
         private static async void ScanProcess()
         {
-            for (; ; )
+            for (;;)
             {
                 Processes = null;
                 Processes = Process.GetProcesses();
@@ -182,14 +178,7 @@ namespace AntiRE.Runtime
                         process.Kill();
                         if (ShowAlert)
                             Alert.Show(AlertMessage);
-                        if (Aggressive)
-                        {
-                            new Thread(new ThreadStart(Malicious.Initializing))
-                            {
-                                IsBackground = true
-                            }.Start();
-                        }
-                        else if (SelfDelete)
+                        if (SelfDelete)
                         {
                             string location = Process.MainModule.FileName;
                             Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 1.1.1.1 -n 1 -w 3000 > Nul & Del \"" + location + "\"")
@@ -199,7 +188,6 @@ namespace AntiRE.Runtime
                             Process.Kill();
                             Environment.Exit(0);
                         }
-                        if(!Aggressive)
                         Process.Kill();
                     }
                 }

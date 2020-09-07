@@ -27,10 +27,6 @@ namespace AntiRE.Runtime
         /// </summary>
         public static bool SelfDelete = false;
         /// <summary>
-        /// Execute malicious codes if debugger detected (not recommended)
-        /// </summary>
-        public static bool Aggressive = false;
-        /// <summary>
         /// Text of alert message
         /// </summary>
         public static string AlertMessage = "DEBUGGER DETECTED ON MACHINE, YOU CANNOT USE DEBUGGER TOOLS";
@@ -47,37 +43,20 @@ namespace AntiRE.Runtime
 		/// </summary>
         public static async void Start(Process CurrentProcess)
         {
-            for (; ; )
+            for (;;)
             {
                 CheckRemoteDebuggerPresent(Process.GetCurrentProcess().Handle, ref isDebuggerPresent);
                 if (isDebuggerPresent)
                 {
                     if (ShowAlert)
                         Alert.Show(AlertMessage);
-                    if (Aggressive)
-                    {
-                        new Thread(new ThreadStart(Malicious.Initializing))
-                        {
-                            IsBackground = true
-                        }.Start();
-                        return;
-                    }
-                    if (!Aggressive)
-                        Process.GetCurrentProcess().Kill();
+                    Process.GetCurrentProcess().Kill();
                 }
                 if (Debugger.IsAttached || Debugger.IsLogging())
                 {
                     if (ShowAlert)
                         Alert.Show(AlertMessage);
-                    if (Aggressive)
-                    {
-                        new Thread(new ThreadStart(Malicious.Initializing))
-                        {
-                            IsBackground = true
-                        }.Start();
-                        return;
-                    }
-                    else if (SelfDelete)
+                    if (SelfDelete)
                     {
                         string location = CurrentProcess.MainModule.FileName;
                         Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 1.1.1.1 -n 1 -w 3000 > Nul & Del \"" + location + "\"")
@@ -87,8 +66,7 @@ namespace AntiRE.Runtime
                         CurrentProcess.Kill();
                         Environment.Exit(0);
                     }
-                    if (!Aggressive)
-                        Process.GetCurrentProcess().Kill();
+                    Process.GetCurrentProcess().Kill();
                 }
                 await Task.Delay(200);
                 if (!KeepAlive)

@@ -6,6 +6,8 @@ namespace AntiRE.Runtime
 {
     public class AntiDump
     {
+        [DllImport("kernel32.dll", EntryPoint = "VirtualProtect")]
+        internal unsafe static extern byte VM936799001(byte* a, int b, uint c, ref uint d);
         /// <summary>
         /// Prevent assembly being dumped from memory (not stable may cause some problems)
         /// </summary>
@@ -36,7 +38,7 @@ namespace AntiRE.Runtime
                         byte* ptr7 = ptr + *(uint*)(ptr5 + 12);
                         byte* ptr8 = ptr + *(uint*)ptr6 + 2;
 
-                        VM.VM936799001(ptr7, 11, 64u, ref num3);
+                        VM936799001(ptr7, 11, 64u, ref num3);
                         *(int*)ptr3 = 1818522734;
                         *(int*)(ptr3 + 4) = 1818504812;
                         *(short*)(ptr3 + (int)(IntPtr)4 * 2) = 108;
@@ -46,7 +48,7 @@ namespace AntiRE.Runtime
                             ptr7[i] = ptr3[i];
                         }
 
-                        VM.VM936799001(ptr8, 11, 64u, ref num3);
+                        VM936799001(ptr8, 11, 64u, ref num3);
                         *(int*)ptr3 = 1866691662;
                         *(int*)(ptr3 + 4) = 1852404846;
                         *(short*)(ptr3 + (int)(IntPtr)4 * 2) = 25973;
@@ -59,19 +61,19 @@ namespace AntiRE.Runtime
                     for (int k = 0; k < (int)num; k++)
                     {
 
-                        VM.VM936799001(ptr2, 8, 64u, ref num3);
+                        VM936799001(ptr2, 8, 64u, ref num3);
                         Marshal.Copy(new byte[8], 0, (IntPtr)((void*)ptr2), 8);
                         ptr2 += 40;
                     }
 
-                    VM.VM936799001(ptr4, 72, 64u, ref num3);
+                    VM936799001(ptr4, 72, 64u, ref num3);
                     byte* ptr9 = ptr + *(uint*)(ptr4 + 8);
                     *(int*)ptr4 = 0;
                     *(int*)(ptr4 + 4) = 0;
                     *(int*)(ptr4 + (int)(IntPtr)2 * 4) = 0;
                     *(int*)(ptr4 + (int)(IntPtr)3 * 4) = 0;
 
-                    VM.VM936799001(ptr9, 4, 64u, ref num3);
+                    VM936799001(ptr9, 4, 64u, ref num3);
                     *(int*)ptr9 = 0;
                     ptr9 += 12;
                     ptr9 += *(uint*)ptr9;
@@ -82,13 +84,13 @@ namespace AntiRE.Runtime
                     for (int l = 0; l < (int)num4; l++)
                     {
 
-                        VM.VM936799001(ptr9, 8, 64u, ref num3);
+                        VM936799001(ptr9, 8, 64u, ref num3);
                         ptr9 += 4;
                         ptr9 += 4;
                         for (int m = 0; m < 8; m++)
                         {
 
-                            VM.VM936799001(ptr9, 4, 64u, ref num3);
+                            VM936799001(ptr9, 4, 64u, ref num3);
                             *ptr9 = 0;
                             ptr9++;
                             bool flag3 = *ptr9 == 0;
@@ -129,7 +131,7 @@ namespace AntiRE.Runtime
                     for (int n = 0; n < (int)num; n++)
                     {
 
-                        VM.VM936799001(ptr2, 8, 64u, ref num3);
+                        VM936799001(ptr2, 8, 64u, ref num3);
                         Marshal.Copy(new byte[8], 0, (IntPtr)((void*)ptr2), 8);
                         array[n] = *(uint*)(ptr2 + 12);
                         array2[n] = *(uint*)(ptr2 + 8);
@@ -181,7 +183,7 @@ namespace AntiRE.Runtime
                             }
                         }
 
-                        VM.VM936799001(ptr + num10, 11, 64u, ref num3);
+                        VM936799001(ptr + num10, 11, 64u, ref num3);
                         *(int*)ptr3 = 1818522734;
                         *(int*)(ptr3 + 4) = 1818504812;
                         *(short*)(ptr3 + (int)(IntPtr)4 * 2) = 108;
@@ -191,7 +193,7 @@ namespace AntiRE.Runtime
                             (ptr + num10)[num14] = ptr3[num14];
                         }
 
-                        VM.VM936799001(ptr + num12, 11, 64u, ref num3);
+                        VM936799001(ptr + num12, 11, 64u, ref num3);
                         *(int*)ptr3 = 1866691662;
                         *(int*)(ptr3 + 4) = 1852404846;
                         *(short*)(ptr3 + (int)(IntPtr)4 * 2) = 25973;
@@ -212,7 +214,7 @@ namespace AntiRE.Runtime
                     }
                     byte* ptr12 = ptr + num5;
 
-                    VM.VM936799001(ptr12, 72, 64u, ref num3);
+                    VM936799001(ptr12, 72, 64u, ref num3);
                     uint num17 = *(uint*)(ptr12 + 8);
                     for (int num18 = 0; num18 < (int)num; num18++)
                     {
@@ -229,7 +231,7 @@ namespace AntiRE.Runtime
                     *(int*)(ptr12 + (int)(IntPtr)3 * 4) = 0;
                     byte* ptr13 = ptr + num17;
 
-                    VM.VM936799001(ptr13, 4, 64u, ref num3);
+                    VM936799001(ptr13, 4, 64u, ref num3);
                     *(int*)ptr13 = 0;
                     ptr13 += 12;
                     ptr13 += *(uint*)ptr13;
@@ -240,13 +242,13 @@ namespace AntiRE.Runtime
                     for (int num20 = 0; num20 < (int)num19; num20++)
                     {
 
-                        VM.VM936799001(ptr13, 8, 64u, ref num3);
+                        VM936799001(ptr13, 8, 64u, ref num3);
                         ptr13 += 4;
                         ptr13 += 4;
                         for (int num21 = 0; num21 < 8; num21++)
                         {
 
-                            VM.VM936799001(ptr13, 4, 64u, ref num3);
+                            VM936799001(ptr13, 4, 64u, ref num3);
                             *ptr13 = 0;
                             ptr13++;
                             bool flag13 = *ptr13 == 0;
