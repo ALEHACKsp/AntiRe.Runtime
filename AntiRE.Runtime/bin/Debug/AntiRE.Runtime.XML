@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AntiRE.Runtime</name>
+    </assembly>
+    <members>
+        <member name="F:AntiRE.Runtime.Alert.NotepadStyle">
+            <summary>
+            Style of alert message (true = Notepad, false = MessageBox : NotSecure)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.Alert.AutoClose">
+            <summary>
+            Auto close message box after preferred time (Default = false)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.Alert.AutoCloseTime">
+            <summary>
+            Time (seconds) to close the message (Default = 2)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.Alert.NotepadPath">
+            <summary>
+            Notepad file path
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiDebugger.SelfDelete">
+            <summary>
+            Program will be closed and deleted if debugger detected (Default = false)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiDebugger.AlertMessage">
+            <summary>
+            Text of alert message
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiDebugger.KeepAlive">
+            <summary>
+            Keep anti debugger service alive until program closed (Default = true)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiDebugger.ShowAlert">
+            <summary>
+            Show a alert message in notepad if debugger detected (Default = true)
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiDebugger.Start(System.Diagnostics.Process)">
+            <summary>
+            Start the anti debugger service
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiDnspy.SelfDelete">
+            <summary>
+            Program will be closed and deleted if detected dnspy on disk (Default = false)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiDnspy.ShowAlert">
+            <summary>
+            Show a alert message in notepad if detected dnspy on disk (Default = true)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiDnspy.AlertMessage">
+            <summary>
+            Text of alert message
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiDnspy.Parse(System.Diagnostics.Process)">
+            <summary>
+            Check for dnspy
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiDump.Parse(System.Type)">
+            <summary>
+            Prevent assembly being dumped from memory (not stable may cause some problems)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiReverserTools.SelfDelete">
+            <summary>
+            Program will be closed and deleted if reverser tools detected (Default = false)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiReverserTools.AlertMessage">
+            <summary>
+            Text of alert message
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiReverserTools.IgnoreCase">
+            <summary>
+            Ignore uppercase and lowecase (Default = true)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiReverserTools.KeepAlive">
+            <summary>
+            Keep anti reverser tools service alive until program closed (Default = true)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiReverserTools.ShowAlert">
+            <summary>
+            Show a alert message in notepad if reverser tools detected (Default = true)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiReverserTools.BlackList">
+            <summary>
+            List of blacklist process names
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiReverserTools.WhiteList">
+            <summary>
+            List of whitelist process names
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiReverserTools.Start(System.Diagnostics.Process)">
+            <summary>
+            Start the anti reverse tool's service
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiSandBox.SelfDelete">
+            <summary>
+            Program will be closed and deleted if application started under sandbox (Default = false)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiSandBox.ShowAlert">
+            <summary>
+            Show a alert message in notepad if application started under sandbox (Default = true)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiSandBox.AlertMessage">
+            <summary>
+            Text of alert message
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiSandBox.Parse(System.Diagnostics.Process)">
+            <summary>
+            Check application running under sandbox
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiSniff.SelfDelete">
+            <summary>
+            Program will be closed and deleted if network monitored (Default = false)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiSniff.ShowAlert">
+            <summary>
+            Show a alert message in notepad if network monitored (Default = true)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiSniff.AlertMessage">
+            <summary>
+            Text of alert message
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiSniff.ValidationCallback(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Validate network ssl certificate, you can use certificate validation on your config for more security
+            example : request.ServerCertificateValidationCallback = ValidationCallback;
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiSniff.Parse(System.Diagnostics.Process)">
+            <summary>
+            Check for sniffers
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiVirtualMachine.SelfDelete">
+            <summary>
+            Program will be closed and deleted if virtual machine detected (Default = false)
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiVirtualMachine.AlertMessage">
+            <summary>
+            Text of alert message
+            </summary>
+        </member>
+        <member name="F:AntiRE.Runtime.AntiVirtualMachine.ShowAlert">
+            <summary>
+            Show a alert message in notepad if virtual machine detected (Default = true)
+            </summary>
+        </member>
+        <member name="M:AntiRE.Runtime.AntiVirtualMachine.Parse(System.Diagnostics.Process)">
+            <summary>
+            Check application running under virtual machine
+            </summary>
+        </member>
+    </members>
+</doc>

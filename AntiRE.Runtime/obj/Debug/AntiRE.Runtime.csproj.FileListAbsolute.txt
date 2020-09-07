@@ -2,3 +2,5 @@ C:\Users\Sychic Boy\Documents\Visual Studio 2015\Projects\AntiRE.Runtime\AntiRE.
 C:\Users\Sychic Boy\Documents\Visual Studio 2015\Projects\AntiRE.Runtime\AntiRE.Runtime\bin\Debug\AntiRE.Runtime.pdb
 C:\Users\Sychic Boy\Documents\Visual Studio 2015\Projects\AntiRE.Runtime\AntiRE.Runtime\obj\Debug\AntiRE.Runtime.dll
 C:\Users\Sychic Boy\Documents\Visual Studio 2015\Projects\AntiRE.Runtime\AntiRE.Runtime\obj\Debug\AntiRE.Runtime.pdb
+C:\Users\Sychic Boy\Documents\Visual Studio 2015\Projects\AntiRE.Runtime\AntiRE.Runtime\bin\Debug\AntiRE.Runtime.XML
+C:\Users\Sychic Boy\Documents\Visual Studio 2015\Projects\AntiRE.Runtime\AntiRE.Runtime\obj\Debug\AntiRE.Runtime.csprojResolveAssemblyReference.cache
